@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3]
+[gd_scene load_steps=11 format=3]
 
 [ext_resource type="Script" path="res://scenes/battle/battle.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/battle/player.tscn" id="2"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" path="res://scenes/battle/danmaku.tscn" id="7"]
 [ext_resource type="PackedScene" path="res://scenes/ui/settings_panel.tscn" id="8"]
 [ext_resource type="PackedScene" path="res://scenes/ui/save_slots.tscn" id="9"]
+[ext_resource type="PackedScene" path="res://scenes/ui/settlement.tscn" id="10"]
 
 [node name="Battle" type="Node2D"]
 script = ExtResource("1")
@@ -64,3 +65,5 @@ text = "下播"
 [node name="Settings" parent="." instance=ExtResource("8")]
 
 [node name="SaveSlots" parent="." instance=ExtResource("9")]
+
+[node name="Settlement" parent="." instance=ExtResource("10")]

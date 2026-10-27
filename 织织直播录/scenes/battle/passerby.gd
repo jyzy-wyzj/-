@@ -3,8 +3,8 @@ extends Area2D
 signal converted
 
 @export var wander_speed: float = 40.0
-@export var convert_need: float = 100.0
-@export var convert_rate: float = 40.0
+@export var convert_need: float = 400.0
+@export var convert_rate: float = 160.0
 
 var convert_progress: float = 0.0
 var _dir: Vector2 = Vector2.ZERO

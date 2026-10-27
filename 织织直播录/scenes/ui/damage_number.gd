@@ -1,7 +1,7 @@
 class_name DamageNumber
 extends Label
 
-enum Type { FIRE, WATER, LIGHT, GUN, DRONE, DARK, PLAYER_HURT }
+enum Type { FIRE, WATER, LIGHT, GUN, DRONE, DARK, PLAYER_HURT, HEAL }
 
 const COLORS: Dictionary = {
 	Type.FIRE: Color(1.0, 0.25, 0.15),
@@ -11,6 +11,7 @@ const COLORS: Dictionary = {
 	Type.DRONE: Color(0.25, 0.95, 0.95),
 	Type.DARK: Color(0.7, 0.08, 0.18),
 	Type.PLAYER_HURT: Color(0.62, 0.06, 0.06),
+	Type.HEAL: Color(0.2, 0.95, 0.35),
 }
 
 func setup(amount: float, type: int) -> void:
@@ -22,6 +23,8 @@ func setup(amount: float, type: int) -> void:
 	text = str(value)
 	if type == Type.PLAYER_HURT:
 		text = "-" + text
+	elif type == Type.HEAL or type == Type.LIGHT:
+		text = "+" + text
 	position.x += randf_range(-14.0, 14.0)
 
 func _ready() -> void:

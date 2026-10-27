@@ -7,8 +7,8 @@ const RED_TEXTS: Array[String] = ["垃圾主播", "退钱!", "真菜", "别播�
 const GREEN_TEXTS: Array[String] = ["主播加油", "好耶", "爱你", "打赏一个", "冲冲冲", "支持"]
 
 @export var speed: float = 200.0
-@export var damage: float = 10.0
-@export var heal_amount: float = 8.0
+@export var damage: float = 40.0
+@export var heal_amount: float = 40.0
 
 var kind: int = Kind.BLACK
 var direction: Vector2 = Vector2.RIGHT

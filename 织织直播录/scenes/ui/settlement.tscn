@@ -1,0 +1,53 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://scenes/ui/settlement.gd" id="1"]
+
+[node name="Settlement" type="CanvasLayer"]
+process_mode = 3
+layer = 90
+script = ExtResource("1")
+
+[node name="Dim" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color(0, 0, 0, 0.6)
+
+[node name="Panel" type="Panel" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -260.0
+offset_top = -170.0
+offset_right = 260.0
+offset_bottom = 170.0
+
+[node name="VBox" type="VBoxContainer" parent="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 20.0
+offset_right = -24.0
+offset_bottom = -20.0
+theme_override_constants/separation = 20
+
+[node name="TitleLabel" type="Label" parent="Panel/VBox"]
+text = "下播结算"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 30
+
+[node name="StatsLabel" type="RichTextLabel" parent="Panel/VBox"]
+fit_content = true
+bbcode_enabled = true
+text = "击杀 0    转化路人 0    本次获得粉丝 0"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 22
+
+[node name="FansLabel" type="Label" parent="Panel/VBox"]
+text = "当前总粉丝 1000    可用粉丝 300"
+horizontal_alignment = 1
+theme_override_font_sizes/font_size = 22
+
+[node name="HomeButton" type="Button" parent="Panel/VBox"]
+custom_minimum_size = Vector2(0, 44)
+text = "回到卧室"

@@ -60,6 +60,18 @@ func _refresh() -> void:
 		var thumb := slot.get_node("VBox/Thumb") as ColorRect
 		var caption := slot.get_node("VBox/Caption") as Label
 		var time_text := GameState.get_slot_time(index)
+		if index == 0:
+			# 第一个位置固定为自动存档位，只能读，不能手动存
+			slot.disabled = _mode == "save"
+			slot.tooltip_text = "自动存档位：每次睡觉时覆盖"
+			if time_text == "":
+				caption.text = "自动存档（空）"
+				thumb.color = Color(0.3, 0.5, 0.6, 1.0)
+			else:
+				caption.text = "自动存档 " + time_text
+				thumb.color = Color(0.27, 0.5, 0.4, 1.0)
+			continue
+		slot.disabled = false
 		if time_text == "":
 			caption.text = "空存档位"
 			thumb.color = Color(0.35, 0.65, 0.95, 1.0)
@@ -70,6 +82,8 @@ func _refresh() -> void:
 func _on_slot_pressed(slot_index: int) -> void:
 	var index := _page * SLOTS_PER_PAGE + slot_index
 	if _mode == "save":
+		if index == 0:
+			return
 		GameState.save_slot(index)
 		_refresh()
 		return

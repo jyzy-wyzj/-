@@ -26,7 +26,7 @@ horizontal_alignment = 1
 
 [node name="AttackButton" type="Button" parent="Panel/VBox"]
 theme_override_font_sizes/font_size = 20
-text = "攻击 +1"
+text = "攻击 +2"
 
 [node name="FireRateButton" type="Button" parent="Panel/VBox"]
 theme_override_font_sizes/font_size = 20
@@ -34,4 +34,4 @@ text = "射速 +10%"
 
 [node name="RangeButton" type="Button" parent="Panel/VBox"]
 theme_override_font_sizes/font_size = 20
-text = "攻击范围 +15%"
+text = "攻击范围 +32"

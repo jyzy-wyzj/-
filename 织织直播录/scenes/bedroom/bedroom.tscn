@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://drm51faaebclx" path="res://scenes/bedroom/bedroom.gd" id="1"]
 [ext_resource type="PackedScene" path="res://scenes/ui/settings_panel.tscn" id="2"]
 [ext_resource type="PackedScene" path="res://scenes/ui/save_slots.tscn" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/ui/book_panel.tscn" id="4"]
 
 [sub_resource type="RectangleShape2D" id="shape_point"]
 size = Vector2(140, 90)
@@ -147,3 +148,5 @@ horizontal_alignment = 1
 [node name="Settings" parent="." instance=ExtResource("2")]
 
 [node name="SaveSlots" parent="." instance=ExtResource("3")]
+
+[node name="BookPanel" parent="." instance=ExtResource("4")]

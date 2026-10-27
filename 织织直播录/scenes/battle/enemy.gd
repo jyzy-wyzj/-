@@ -2,10 +2,12 @@ extends Area2D
 
 signal died(pos: Vector2)
 
-@export var max_hp: int = 3
-@export var move_speed: float = 60.0
-@export var drain_rate: float = 50.0
-@export var touch_damage: float = 12.0
+# 串子（近战）基础数值，4× 缩放
+@export var max_hp: int = 48
+@export var move_speed: float = 65.0
+@export var drain_rate: float = 200.0
+@export var touch_damage: float = 24.0
+@export var exp_value: int = 4
 
 var hp: int
 
@@ -41,7 +43,8 @@ func _pick_target() -> Node2D:
 
 func _attack_target(target: Node2D, delta: float) -> void:
 	if target.is_in_group("player"):
-		target.take_damage(touch_damage * delta)
+		# 接触伤害不触发弹幕 iframe，也不触发闪避（闪避只对弹幕）
+		target.take_damage(touch_damage * delta, false)
 	else:
 		target.drain_progress(drain_rate * delta)
 
