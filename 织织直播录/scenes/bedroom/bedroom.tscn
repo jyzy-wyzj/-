@@ -1,0 +1,149 @@
+[gd_scene load_steps=5 format=3 uid="uid://cvdg3d6lgge0r"]
+
+[ext_resource type="Script" uid="uid://drm51faaebclx" path="res://scenes/bedroom/bedroom.gd" id="1"]
+[ext_resource type="PackedScene" path="res://scenes/ui/settings_panel.tscn" id="2"]
+[ext_resource type="PackedScene" path="res://scenes/ui/save_slots.tscn" id="3"]
+
+[sub_resource type="RectangleShape2D" id="shape_point"]
+size = Vector2(140, 90)
+
+[node name="Bedroom" type="Node2D" unique_id=1303759786]
+script = ExtResource("1")
+
+[node name="Background" type="ColorRect" parent="." unique_id=771724307]
+offset_left = 1.0
+offset_top = 2.0
+offset_right = 1153.0
+offset_bottom = 650.0
+mouse_filter = 2
+color = Color(0.12, 0.12, 0.16, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="HintLabel" type="Label" parent="." unique_id=208503530]
+offset_left = 176.0
+offset_top = 40.0
+offset_right = 976.0
+offset_bottom = 80.0
+theme_override_font_sizes/font_size = 24
+text = "卧室 —— 点击电脑开播"
+horizontal_alignment = 1
+
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1099520597]
+
+[node name="DayLabel" type="Label" parent="HUD" unique_id=470171490]
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 324.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 24
+text = "第 1 天"
+metadata/_edit_use_anchors_ = true
+
+[node name="FansLabel" type="Label" parent="HUD" unique_id=1698055633]
+offset_left = 24.0
+offset_top = 56.0
+offset_right = 324.0
+offset_bottom = 92.0
+theme_override_font_sizes/font_size = 24
+text = "总粉丝 1000"
+metadata/_edit_use_anchors_ = true
+
+[node name="Computer" type="Area2D" parent="." unique_id=279963509]
+position = Vector2(300, 250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Computer" unique_id=1576353194]
+shape = SubResource("shape_point")
+
+[node name="ColorRect" type="ColorRect" parent="Computer" unique_id=339910545]
+offset_left = -70.0
+offset_top = -45.0
+offset_right = 70.0
+offset_bottom = 45.0
+mouse_filter = 2
+color = Color(0.2, 0.4, 0.8, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Computer" unique_id=987425496]
+offset_left = -70.0
+offset_top = -15.0
+offset_right = 70.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 22
+text = "电脑"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Bed" type="Area2D" parent="." unique_id=579746934]
+position = Vector2(850, 250)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bed" unique_id=1519151227]
+shape = SubResource("shape_point")
+
+[node name="ColorRect" type="ColorRect" parent="Bed" unique_id=1999517155]
+offset_left = -70.0
+offset_top = -45.0
+offset_right = 70.0
+offset_bottom = 45.0
+mouse_filter = 2
+color = Color(0.25, 0.65, 0.35, 1)
+
+[node name="Label" type="Label" parent="Bed" unique_id=868638906]
+offset_left = -70.0
+offset_top = -15.0
+offset_right = 70.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 22
+text = "床"
+horizontal_alignment = 1
+
+[node name="Mirror" type="Area2D" parent="." unique_id=761166913]
+position = Vector2(300, 480)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror" unique_id=479624188]
+shape = SubResource("shape_point")
+
+[node name="ColorRect" type="ColorRect" parent="Mirror" unique_id=896423874]
+offset_left = -70.0
+offset_top = -45.0
+offset_right = 70.0
+offset_bottom = 45.0
+mouse_filter = 2
+color = Color(0.55, 0.35, 0.75, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Label" type="Label" parent="Mirror" unique_id=1564002815]
+offset_left = -70.0
+offset_top = -15.0
+offset_right = 70.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 22
+text = "镜子"
+horizontal_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Book" type="Area2D" parent="." unique_id=1261985371]
+position = Vector2(850, 480)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Book" unique_id=1822484142]
+shape = SubResource("shape_point")
+
+[node name="ColorRect" type="ColorRect" parent="Book" unique_id=676563583]
+offset_left = -70.0
+offset_top = -45.0
+offset_right = 70.0
+offset_bottom = 45.0
+mouse_filter = 2
+color = Color(0.85, 0.7, 0.25, 1)
+
+[node name="Label" type="Label" parent="Book" unique_id=197639478]
+offset_left = -70.0
+offset_top = -15.0
+offset_right = 70.0
+offset_bottom = 15.0
+theme_override_font_sizes/font_size = 22
+text = "书"
+horizontal_alignment = 1
+
+[node name="Settings" parent="." instance=ExtResource("2")]
+
+[node name="SaveSlots" parent="." instance=ExtResource("3")]
